@@ -1,0 +1,42 @@
+.ad{
+    border:1px solid black;
+    overflow:hidden;
+    
+    padding:20px;
+}
+.ad:hover{
+    background-color:	#F5F5F5;
+}
+.container{
+    
+   margin-top:80px;
+    min-height:600px ;
+}
+.discription{
+    width:40%;
+float:left;
+margin-left:30px;
+}
+.discription spam{
+    margin-top:0px;
+    color:rgb(66, 66, 66);
+}
+.discription p{
+    color:rgb(66, 66, 66);
+}
+.discription h1{
+    color:#2B64BB;
+    margin-bottom: 0px;
+}
+h2{
+    float:right;
+}
+.discription h1:hover{
+cursor: pointer;
+color:#F67A06;
+}
+.ad img{
+    float:left;
+    height:150px;
+    width:150px;
+}

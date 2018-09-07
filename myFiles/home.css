@@ -1,0 +1,145 @@
+*{
+    box-sizing:border-box;
+}
+.content{
+    width:80%;
+    margin:0px auto;
+    overflow: hidden;
+}
+.head{
+
+border:1px solid black;
+overflow:hidden;
+padding:4px;
+}
+.head a{
+    background-color:	#F67A06;
+    text-decoration: none;
+   display:block;
+   float:right; 
+   margin-top:20px;    
+    color:white;
+    padding:12px;
+   border-radius:5px;
+    font-size:20px;
+
+}
+
+a#logo{
+    float:none;
+    display: initial;
+    background-color:white;
+}
+a#acc{
+    background-color:	#2B64BB;
+    margin:20px 20px; 
+}
+.head img{
+height:80px;
+margin-top:13px;
+width:80px;
+
+float:left;
+}
+.head h1{
+    
+display:inline-block;
+    margin-top:25px;
+text-align:center;
+    margin-left:50px;
+    
+}
+.search{
+    overflow:hidden;
+    margin-top:10px;
+    background-color:#797C80;
+    padding:10px;
+}
+.search a{
+    background-color:	#F67A06;
+    
+   
+   margin-left:25px;
+   margin-top:20px;    
+    color:white;
+    padding:12px 17px;
+
+   border-radius:4px;
+    font-size:27px;
+}
+.search a:hover{
+    background-color:		rgb(231, 161, 96);
+}
+.search input{
+    padding:10px;
+    display:inline-block;
+    margin:10px auto;
+    width:650px;
+    border-radius:10px;
+    font-size:25px;
+}
+.categories{
+    
+    overflow:hidden;
+    padding:0px 20px;
+width:80%;
+margin:10px auto;
+
+}
+.item{
+    float:left;
+    height:130px;
+    width:120px;
+    padding:14px 10px;
+    border:1px solid rgb(221, 220, 220);
+    
+
+}
+.item img {
+    display:block;
+    margin:0 auto;
+}
+.item a{
+text-align:center;
+text-decoration:none;
+color:rgb(61, 65, 255);
+}
+.item a span{
+    
+    display:block;
+    margin-top:10px;
+    
+}
+#add{
+    margin-top:100px;
+    width:100%;
+}
+.item a span:hover{
+    color:#F67A06;
+}
+
+.footer img{
+    margin:30px 50px 0px 150px;
+    height:80px;
+    width:80px;
+    float:left;
+}
+.foot1{
+    float:left;
+    margin:30px 30px;
+    display:table;
+}
+.foot1 a{
+    
+    text-decoration:none;
+    color:rgb(66, 66, 66);
+    display:block;
+}
+.foot1 a:hover{
+
+    color:#F67A06;
+}
+.footer{
+    border-top:2px solid rgb(184, 183, 183);
+    margin-bottom:200px;
+}

@@ -1,0 +1,51 @@
+*{
+    box-sizing: border-box;
+}
+table{
+    border :1px solid rgb(197, 185, 185);
+   font-weight:bold;
+   font-size:20px;   
+    width:100%;
+    border-collapse: collapse;
+    margin-top:40px;
+}
+
+input[type=text],select{
+    padding:5px;
+    border:1px solid rgb(233, 214, 214);
+    border-radius:2px;
+    margin-left:15px;
+}
+
+span{
+    font-weight: none;
+    font-size:13px;
+}
+thead,tbody{
+    border:1px solid rgb(233, 214, 214);
+}
+th{
+    padding:10px;
+    font-weight: normal;
+    font-size:22px;
+}
+td{
+    padding:30px 10px;
+}
+textarea{
+    resize:none;
+    
+}
+tfoot input{
+    
+        background-color:	#F67A06;
+        
+       font-weight: normal;
+       margin-left:25px;
+       margin-top:20px;    
+        color:white;
+        padding:12px 17px;
+    
+       border-radius:4px;
+        
+    }

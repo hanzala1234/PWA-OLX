@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Post An Add</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="home.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="posting.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <div class="content">
+        <div class="head">
+         <a id="logo" href="index.html">   
+    <img src="images/Logo.png">
+</a>
+    <h1>Pakistan's Largest MarketPlace</h1>
+    <a id="acc" href="registration?verb=login">My account</a>   
+         </div>
+        <form method="POST" enctype="multipart/form-data" >
+    <table>
+        
+        <thead>
+
+        <tr>
+<th align="left" colspan="2">Submit an Ad</th>
+</tr>
+
+    </thead>
+
+<tbody>
+    <tr>
+    <td> 
+
+Ad title:</td><td>
+    <input type ="text" size="70" name="title" required>
+</td>
+</tr>  
+
+<tr>
+    <td>
+        Cateogry:
+        </td>
+        <td>
+        <select name="category" required>
+<option value="properties">properties</option>
+<option value="electronics">electronics</option>
+<option value="pets">pets</option>
+<option value="mobiles">mobiles</option>
+<option vlaue="bikes">used bikes</option>
+<option value="service">service</option>
+<option value="fashion">Fashion</option>
+<option value="cars">used cars</option>
+<option value="furniture"> furniture</option>
+
+
+        </select>
+
+    </td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td>
+    
+        Price:
+        </td><td> <input type ="text" size="10" name="price" required> 
+        <span>Rs</span>
+    </td>
+    </tr><td>
+    
+            Add Discription:
+            </td><td>
+            <textarea cols="50" rows="7" name="discription" required></textarea>
+    
+    </td>
+</tr>
+<tr>
+<td>Upload photos</td>
+<td> <input type="file" name="pics" accept="image/*" multiple required></td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+    <td>Name</td>
+    <td><input type="text" size="40" name="name" required></td>
+</tr>
+<tr>
+        <td>Phone No:</td>
+        <td><input type="text" size="30" maxlength="15" name="phone" required></td>
+    </tr>
+ 
+</tbody>
+<tfoot>
+    <tr><td colspan="2"> <input type="submit" value="submit"> </td></tr>
+</tfoot>
+    </table>   
+</form> 
+    </div>
+    <div class="footer">
+            <img src="images/Logo.png">
+            <div class="foot1">
+                <a href="">Location map</a>
+                <a href="">Popular searches</a>
+                <a href="">Archeive</a>
+                <a href="">Sitemap</a>
+                <a href="">Feautred adds</a>
+            </div>
+            <div class="foot1">
+                    <a href="">Terms of Use</a>
+                    <a href="">Help & Contact us</a>
+                    
+                </div>
+                <div class="foot1">
+                        <a href="">Who we are </a>
+                        <a href="">Join OLX</a>
+                        <a href="">Happy Olxers</a>
+                        
+                    </div>
+            </div>
+<script>
+    
+    
+
+var rows=document.querySelectorAll("tr");
+
+for(i=1;i<rows.length;i++){
+    
+rows[i].querySelector("td").align="right";
+
+
+}
+
+</script>
+        
+</body>
+</html>

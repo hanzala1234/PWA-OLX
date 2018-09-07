@@ -1,0 +1,100 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>OLX PWA APP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" media="screen" href="/home.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="registration.css"/>
+
+    <script src="registration.js"></script>
+    
+</head>
+<body>
+        
+                 
+    <div class="content">
+    <div class="head">
+       <a id="logo" href="index.html">
+        <img src="images/Logo.png">
+    </a>
+<h1>Pakistan's Largest MarketPlace</h1>
+<a href="posting.html"> submit an add</a>
+
+    </div>
+    <h1 id="heading" style="text-align: center">Login</h1>
+    <div class="registerContent">
+    <div class="signupContent">
+        <form method="POST" >
+        <table>
+                    <tr><td align="right">
+               <h4> Your email:</h4></td>
+                <td><input type="text" name="Email" size="40" required></td>
+                </tr>
+                <br>    
+                <tr><td align="right">
+                        <h4>Your Password:</h4></td>
+                        <td><input type="password" size="40" name="Password" ></td>
+                        </tr>
+                        <br> 
+            <tr><td align="right">
+            <h4>Repeat Password:</h4></td>
+                                <td><input type="password" size="40" name="RPassword" required></td>
+                                </tr>
+                                <br> 
+            </table>
+            
+                </form>
+                <button id="reg_submit" onclick="sendForm()">submit</button>
+
+
+    </div>
+
+    
+        
+    
+
+
+    <div class="loginContent">
+<form method="POST" action="signin">
+    <table>
+        <tr><td align="right">
+   <h4> Your email:</h4></td>
+    <td><input type="text" name="Email_Log" size="40"></td>
+    </tr>
+    <br>    
+    <tr><td align="right">
+            <h4>Your Password:</h4></td>
+            <td><input type="password" size="40" name="Pass_Log"></td>
+            </tr>
+            <br> 
+</table>
+</form>
+<button onclick="document.querySelectorAll('form')[1].submit();"> login</button>
+    <a href="registration?verb=signup">New usesr ?Register here</a>
+</div>
+</div>
+    </div>
+    <P>By logging in, you accept our Terms of Use</P>
+    <div class="footer">
+            <img src="images/Logo.png">
+            <div class="foot1">
+                <a href="">Location map</a>
+                <a href="">Popular searches</a>
+                <a href="">Archeive</a>
+                <a href="">Sitemap</a>
+                <a href="">Feautred adds</a>
+            </div>
+            <div class="foot1">
+                    <a href="">Terms of Use</a>
+                    <a href="">Help & Contact us</a>
+                    
+                </div>
+                <div class="foot1">
+                        <a href="">Who we are </a>
+                        <a href="">Join OLX</a>
+                        <a href="">Happy Olxers</a>
+                        
+                    </div>
+            </div>
+            <script>dynamic("<%= message %>","<%= status%>");</script>

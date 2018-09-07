@@ -1,0 +1,58 @@
+<head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>OLX PWA APP</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="home.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="ads.css" />
+    
+        <script src="main.js"></script>
+    </head>
+    <body>
+        <div class="content">
+        <div class="head">
+    <img src="images/Logo.png">
+    
+    <h1>Pakistan's Largest MarketPlace</h1>
+    <a> submit an add</a>
+        </div>
+    <div class="container">
+        <% if(objects.length>0){ %>
+            <% objects.forEach(function(object){ %>
+      <div class="ad">
+          <img src="<%= object.pics[0] %>">
+          <div class="discription">
+              
+              <h1><%= object.title %></h1>
+              <%= object.category %>
+              <p><%= object.discription %> </p>
+              
+          </div>
+          <h2>RS:<%= object.price %></h2>
+      </div>
+    <%})} else { %>
+      <h1><img src='images/download.png' height='50px' width='50px' > NO Search found </h1>
+      <%} %>
+    </div>
+    
+            <div class="footer">
+                <img src="images/Logo.png">
+                <div class="foot1">
+                    <a href="">Location map</a>
+                    <a href="">Popular searches</a>
+                    <a href="">Archeive</a>
+                    <a href="">Sitemap</a>
+                    <a href="">Feautred adds</a>
+                </div>
+                <div class="foot1">
+                        <a href="">Terms of Use</a>
+                        <a href="">Help & Contact us</a>
+                        
+                    </div>
+                    <div class="foot1">
+                            <a href="">Who we are </a>
+                            <a href="">Join OLX</a>
+                            <a href="">Happy Olxers</a>
+                            
+                        </div>
+                </div>

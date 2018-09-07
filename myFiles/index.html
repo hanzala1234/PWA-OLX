@@ -1,0 +1,111 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>OLX PWA APP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="home.css" />
+    
+</head>
+<script>
+if('serviceWorker' in navigator){
+    navigator.serviceWorker.register("sw.js");
+}
+
+</script>
+<body>
+    <div class="content">
+    <div class="head">
+<img src="images/Logo.png">
+
+<h1>Pakistan's Largest MarketPlace</h1>
+
+<a href="posting.html"> submit an add</a>
+<a id="acc" href="registration?verb=login">My account</a>
+    </div>
+    <div class="search">
+        <input type="text" placeholder="Search Here">
+        <a> Search </a>
+    </div>    
+    <div class="categories">
+        
+        <div class="item">
+<a href="http://localhost:3030/ads?category=properties">
+<img src="images/properties.PNG">
+                
+<span>Properties</span>
+ </a>
+</div>
+ <div class="item">
+<a href="http://localhost:3030/ads?category=cars">
+<img src="images/cars.PNG">
+<span>Used cars</span>
+</a>
+</div>
+<div class="item">
+<a href="http://localhost:3030/ads?category=electronics">
+<img src="images/electronics.PNG">
+<span>Electronics & Applicances </span>
+</a>
+</div>
+<div class="item">
+        <a href="http://localhost:3030/ads?category=bikes">
+        <img src="images/bikes.PNG">
+                        
+        <span>bikes</span>
+         </a>
+        </div>
+         <div class="item">
+        <a href="http://localhost:3030/ads?category=pets">
+        <img src="images/pets.PNG">
+        <span>Pets</span>
+        </a>
+        </div>
+        <div class="item">
+        <a href="http://localhost:3030/ads?category=Fashion">
+        <img src="images/Fashion.PNG">
+        <span>Fashion</span>
+        </a>
+        </div>                                         
+        <div class="item">
+                <a href="http://localhost:3030/ads?category=service">
+                <img src="images/service.PNG">
+                                
+                <span>Services</span>
+                 </a>
+                </div>
+                <div class="item">
+                <a href="http://localhost:3030/ads?category=furniture">
+                <img src="images/furniture.PNG">
+                <span>Furniture</span>
+                </a>
+                </div>  
+    
+</div>
+</div>
+<img id="add" src="images/home_add.PNG">
+<div class="footer">
+<img src="images/Logo.png">
+<div class="foot1">
+    <a href="">Location map</a>
+    <a href="">Popular searches</a>
+    <a href="">Archeive</a>
+    <a href="">Sitemap</a>
+    <a href="">Feautred adds</a>
+</div>
+<div class="foot1">
+        <a href="">Terms of Use</a>
+        <a href="">Help & Contact us</a>
+        
+    </div>
+    <div class="foot1">
+            <a href="">Who we are </a>
+            <a href="">Join OLX</a>
+            <a href="">Happy Olxers</a>
+            
+        </div>
+</div>
+
+</body>
+</html>

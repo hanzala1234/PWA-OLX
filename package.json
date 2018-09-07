@@ -1,0 +1,24 @@
+{
+  "name": "pwa-olxproject",
+  "version": "1.0.1",
+  "description": "Project for fun",
+  "main": "hello.js",
+  "scripts": {
+    "start": "node app",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Muhammad hanzala",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "mongoose": "^5.2.13",
+    "morgan": "^1.9.0",
+    "multer": "^1.3.1"
+  },
+  "keywords": [],
+  "engines": {
+    "node": "4.2.x"
+    } 
+   
+}
