@@ -7,7 +7,7 @@ var mongoose=require('mongoose');
 
 var router=require('./router.js');
 var port=process.env.PORT||3030;
-mongoose.connect("mongodb://localhost:27017/PWAOLX",function(err){
+mongoose.connect("mongodb://Muhammad:hanzala12@ds127841.mlab.com:27841/mydatabase",function(err){
     if(!err) console.log("Database created");
 });
 
