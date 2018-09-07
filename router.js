@@ -25,8 +25,11 @@ var upload=multer({storage:storage});
 router.post('/posting.html',upload.array('pics'),function(req,res){
     var pictures=[];
     req.files.forEach(function(file){
-
-        pictures.push(file.path.replace("myFiles\\",""));
+        var fname;
+ if(file.path.indexOf('myFiles\/')!=-1) fname=file.path.replace("myFiles\/","");
+ else fname=file.path.replace("myFiles\\","");
+        
+ pictures.push(fname);
     });
   
     var name=req.body.name;  var discription=req.body.discription;
