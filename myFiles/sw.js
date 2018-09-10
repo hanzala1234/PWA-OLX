@@ -3,7 +3,7 @@ var staticFiles=['index.html','posting.html','posting.css','home.css','images/Lo
 'images/bikes.PNG','images/service.PNG','images/furniture.PNG','images/properties.PNG','images/home_add.PNG','images/menu.png','offline.html'];
 
 self.addEventListener("install",function(event){
-    console.log("Service worker is installing now ");
+    console.log("Service worker is installing now");
     self.skipWaiting();
     event.waitUntil(
         caches.open("staticFiles").then(function(cach){
