@@ -49,3 +49,30 @@ tfoot input{
        border-radius:4px;
         
     }
+    @media only screen and (max-width:700px){
+        td{padding:20px 10px;}
+        table{font-size:16px;}
+        input#title{
+            width:350px;
+        }
+    }
+    @media only screen and (max-width:540px){
+        td{padding:15px 10px;}
+        table{font-size:13px;}
+        input#title{
+            width:320px;
+        }
+        textarea{
+            width:320px;
+        }
+    }
+    @media only screen and (max-width:460px){
+        td{padding:13px 8px;}
+        table{font-size:12px;}
+        input#title{
+            width:290px;
+        }
+        textarea{
+            width:280px;
+        }
+    }

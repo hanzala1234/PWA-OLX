@@ -5,29 +5,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>OLX PWA APP</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" type="text/css" media="screen" href="home.css" />
     
 </head>
 <script>
 if('serviceWorker' in navigator){
     navigator.serviceWorker.register("sw.js");
+    console.log("Service worker installed");
 }
 
 </script>
 <body>
     <div class="content">
     <div class="head">
-<img src="images/Logo.png">
 
+        <div class="mo" onmouseover="document.querySelector('.menuBox').style.display='block'"
+        onmouseout="document.querySelector('.menuBox').style.display='none'">
+        <img src="images/menu.png" id="menu" > 
+        
+        <div class="menuBox"><a href="registration?verb=login">My Account</a> 
+            <a  href="posting.html">Post an add</a></div>    
+        </div>
+        
+        <img src="images/Logo.png">
+    
 <h1>Pakistan's Largest MarketPlace</h1>
 
 <a href="posting.html"> submit an add</a>
 <a id="acc" href="registration?verb=login">My account</a>
-    </div>
-    <div class="search">
-        <input type="text" placeholder="Search Here">
-        <a> Search </a>
-    </div>    
+
+</div>
+
+    <div class="search" >
+        <form   action="mySearch">
+        <input type="text" name ="search" placeholder="Search Here">
+        <input type="submit" value="search"> 
+    </form>
+    </div> 
+
     <div class="categories">
         
         <div class="item">
@@ -83,7 +99,10 @@ if('serviceWorker' in navigator){
                 </div>  
     
 </div>
+<a href="off_ads.html"> View offline ads</a>
+<button id="addBtn">Add to home screen</button>
 </div>
+
 <img id="add" src="images/home_add.PNG">
 <div class="footer">
 <img src="images/Logo.png">
@@ -106,6 +125,29 @@ if('serviceWorker' in navigator){
             
         </div>
 </div>
-
+<script>
+    var adBtn=document.getElementById("addBtn");
+    var myPrompt ;
+window.addEventListener("beforeinstallprompt",function(event){
+    event.preventDefault();
+    alert("done");
+    myPrompt=event;
+    
+    adBtn.style.display="block";
+});
+adBtn.addEventListener('click',function(event){
+    adBtn.style.display='none';
+    myPrompt.prompt();
+    myPrompt.userChoice
+    .then((choiceResult) => {
+      if (choiceResult.outcome === 'accepted') {
+        console.log('User accepted the A2HS prompt');
+      } else {
+        console.log('User dismissed the A2HS prompt');
+      }
+      deferredPrompt = null;
+    });
+});
+</script>
 </body>
 </html>

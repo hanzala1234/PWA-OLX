@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>OLX PWA APP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="home.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="discription.css" />
+</head>
+
+<body>
+    <div class="content">
+    <div class="head">
+
+         <a id="logo" href="index.html">   
+    <img src="images/Logo.png">
+</a>
+
+<h1>Pakistan's Largest MarketPlace</h1>
+
+<a href="posting.html"> submit an add</a>
+<a id="acc" href="registration?verb=login">My account</a>
+    </div>
+    <div class="defination">
+  <div class="discription">
+        <li>
+    
+       <ul>
+  <h1><%= object.title%></h1>
+<br> Added at : <%= object.createdAt %>
+</ul><ul>
+        <img src="<%= object.pics[0] %>" id="display">
+</ul><ul>
+<% object.pics.forEach(function(picture){%>
+<img src="<%= picture%>">
+<% }) %>
+
+    <br>
+    <p> <%= object.discription %>
+    </p>
+</ul>
+</li>
+</div>
+
+<div class="Info">
+<li>
+<ol> Price : <%= object.price%></ol>
+<ol> <h2><%= object.name%></h2><br>Active</ol>
+<ol> Chat with seller<br>
+<textarea cols='30' rows='5' ></textarea><br><button>Send</button></ol>
+<ol><h3>safety tip for buyer</h3>
+  <p>  Meet seller at a safe location</p>
+  <p>  Meet seller at a safe location</p>
+  <p>  Meet seller at a safe location</p>
+</ol>
+
+</li>
+
+</div>
+    </div>
+
+    <Script>
+    var imgs=document.querySelector('li').querySelectorAll('img');
+    
+    imgs.forEach(function(image){
+        image.addEventListener("click",function(){
+            document.querySelector('li').querySelector('img').src=image.src;
+    });
+    });
+    
+    </Script>

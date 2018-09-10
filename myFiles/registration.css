@@ -2,6 +2,32 @@ h1{
 margin-top:70px;
 
 }
+.tab {
+    overflow: hidden;
+    
+    display:none;
+}
+#ads table{
+    width:100%;
+}
+.tabcontent{
+    border:1px solid black;
+}
+#ads{color:#F67A06;}
+#ads table,#ads td,#ads th{
+    border-collapse: collapse;
+    border:1px solid black;
+}
+.tab button {
+    background-color: inherit;
+    color:black;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    
+    transition: 0.3s;
+}
 .registerContent{
     
 overflow:hidden;
@@ -11,10 +37,10 @@ overflow:hidden;
     margin:0px auto;
 }
 .loginContent{
-    display:none;
+    display:block;
 }
 .signupContent{
-    display:initial;
+    display:block;
 }
 input[type="text"],input[type="password"]{
     padding:5px;
@@ -43,4 +69,21 @@ button{
         text-align: center;
         COLOR:rgb(83, 81, 81);
         margin-bottom:100px;
+    }
+    @media only screen and (max-width:880px){
+        .registerContent{
+            width:75%;
+            font-size:15px;
+        }
+    }
+    @media only screen and (max-width:700px){
+        .registerContent{
+            width:85%;
+        }
+        .registerContent h4{font-size:15px; }
+    }
+    @media only screen and (max-width:540px){
+        .registerContent h4{font-size:13px; width:95%; }
+        input[type="text"],input[type="password"]{
+            font-size:13px;}
     }

@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="home.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="ads.css" />
     
-        <script src="main.js"></script>
+        
     </head>
     <body>
         <div class="content">
@@ -19,11 +19,18 @@
                         <a href="posting.html"> submit an add</a>
                         <a id="acc" href="registration?verb=login">My account</a>
                             </div>
-    <div class="container">
+                <a href="off_ads.html">Offline ads</a>    
+                            <div class="container">
+        
         <% if(objects.length>0){ %>
-            <% objects.forEach(function(object){ %>
-      <div class="ad">
-          <img src="<%= object.pics[0] %>">
+            
+            <% objects.forEach(function(object){ 
+                var c= "discription?id="+object._id
+                %>
+                
+                <div class="ad">
+                        <a href=<%= c %>>
+          <img id="myImg" src="<%= object.pics[0] %>">
           <div class="discription">
               
               <h1><%= object.title %></h1>
@@ -32,10 +39,16 @@
               
           </div>
           <h2>RS:<%= object.price %></h2>
-      </div>
+          
+        </a>
+        
+
+        <button><h2 style="font-weight:none" onclick="laterView('<%= object._id %>','<%= object.pics %>' )"> view offline </h2></button>
+        </div>
     <%})} else { %>
       <h1><img src='images/download.png' height='50px' width='50px' > NO Search found </h1>
       <%} %>
+      
     </div>
     
             <div class="footer">
@@ -59,3 +72,44 @@
                             
                         </div>
                 </div>
+                <script>
+                function laterView(id,object){
+                    
+                    object=object.replace(/uploads/g, "uploads/");
+                    var images=object.split(",");
+                    
+                    var link= "discription?id="+id;
+                    
+                    fetch(link).then(function(response){
+                      
+                        caches.open("offline-cache").then(function(myCach){
+                            myCach.put(link,response);
+                            alert("Added to offline ads");
+                            
+                        })
+                        
+                    });
+                    images.forEach(function(img){
+                        
+                        fetch(img).then(function(response){
+                        caches.open("offline-cache").then(function(myCach){
+                          myCach.put(img,response);  
+                          
+                    })});
+                  
+                    });
+                    
+                    
+                    
+                    var link1="object?id="+id;
+                    fetch(link1).then(function(response){
+                      
+                      caches.open("offline-cache").then(function(myCach){
+                          myCach.put(link1,response);
+
+                      })
+                      
+                  });}
+                
+ 
+                </script>

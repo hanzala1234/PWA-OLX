@@ -29,17 +29,17 @@
         <table>
                     <tr><td align="right">
                <h4> Your email:</h4></td>
-                <td><input type="text" name="Email" size="40" required></td>
+                <td><input type="text" name="Email" size="35" required></td>
                 </tr>
                 <br>    
                 <tr><td align="right">
                         <h4>Your Password:</h4></td>
-                        <td><input type="password" size="40" name="Password" ></td>
+                        <td><input type="password" size="35" name="Password" ></td>
                         </tr>
                         <br> 
             <tr><td align="right">
             <h4>Repeat Password:</h4></td>
-                                <td><input type="password" size="40" name="RPassword" required></td>
+                                <td><input type="password" size="35" name="RPassword" required></td>
                                 </tr>
                                 <br> 
             </table>
@@ -60,19 +60,45 @@
     <table>
         <tr><td align="right">
    <h4> Your email:</h4></td>
-    <td><input type="text" name="Email_Log" size="40"></td>
+    <td><input type="text" name="Email_Log" size="35"></td>
     </tr>
     <br>    
     <tr><td align="right">
             <h4>Your Password:</h4></td>
-            <td><input type="password" size="40" name="Pass_Log"></td>
+            <td><input type="password" size="35" name="Pass_Log"></td>
             </tr>
             <br> 
 </table>
 </form>
 <button onclick="document.querySelectorAll('form')[1].submit();"> login</button>
+
     <a href="registration?verb=signup">New usesr ?Register here</a>
 </div>
+<div class="tab">
+        <button class="tablinks" style="color:#F67A06;" onclick="openCity(event, 'London')">Ads</button>
+        <button class="tablinks" onclick="openCity(event, 'Paris')">Messages</button>
+      
+
+      <div id="ads" class="tabcontent">
+            <div ad>
+                <table>
+                        <tr>
+                                <th> Date    </th>
+                                <th> MY book is for sale</th>
+                                <th> 90  </th>
+                 </tr>
+                    <tr>
+               <td>    12-3-17 </td>
+               <td> <img src="images/bikes.png" height=50px width=50px><h4 style="display: inline-block;">
+                    MY book is for sale</h4></td>
+               <td> 20200000 </td>
+</tr>
+                </table>
+            </div>
+            </div>
+          </div>
+
+
 </div>
     </div>
     <P>By logging in, you accept our Terms of Use</P>
@@ -97,4 +123,11 @@
                         
                     </div>
             </div>
-            <script>dynamic("<%= message %>","<%= status%>");</script>
+            <script>dynamic("<%= message %>","<%= status%>");
+
+
+            if("<%= email%>"!=''){
+       var email="<%= email%>";
+       localStorage.email=email;
+}
+            </script>

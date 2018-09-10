@@ -1,0 +1,67 @@
+<head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>OLX PWA APP</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="home.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="ads.css" />
+    
+        
+    </head>
+    <body>
+        <div class="content">
+                <div class="head">
+                    <a id="logo" href="index.html">
+                        <img src="images/Logo.png">
+                    </a>
+                        <h1>Pakistan's Largest MarketPlace</h1>
+                        
+                        <a href="posting.html"> submit an add</a>
+                        <a id="acc" href="registration?verb=login">My account</a>
+                            </div>
+                            <div class="container">
+                                <p>My Name</p>
+                                </div>
+                              
+                              <script>
+caches.open("offline-cache").then(function(myCach){
+myCach.matchAll("object",{ignoreSearch:true}).then(function(response){
+    var myDiv=document.querySelector('.container');
+    
+    
+    response.forEach(function(objects){
+        objects.json().then(function(res){
+            var link= document.createElement('a');
+            link.href="discription?id="+res._id;
+            var ad=document.createElement("div");
+            ad.classList.add('ad');
+  var discription=document.createElement("div");
+  discription.classList.add('discription');
+   
+
+
+
+
+ad.insertAdjacentHTML("beforeend", "<img src='"+res.pics[0]+"'>");
+
+discription.insertAdjacentHTML('beforeend','<h1>'+res.title+'</h1>');
+discription.insertAdjacentHTML('beforeend',res.category);
+discription.insertAdjacentHTML('beforeend','<p>'+res.discription+'</p>');
+ad.insertAdjacentHTML('beforeend','<h2> Rs'+res.price+'</h2>');
+
+ad.insertAdjacentElement('beforeend',discription);
+link.insertAdjacentElement('beforeend',ad);
+myDiv.insertAdjacentElement('beforeend',link);
+
+
+});
+         
+         
+                
+         }); 
+
+    });
+
+
+});
+</script>

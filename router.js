@@ -35,9 +35,10 @@ router.post('/posting.html',upload.array('pics'),function(req,res){
     var name=req.body.name;  var discription=req.body.discription;
   var title=req.body.title;   var phone=req.body.phone;
   var price=req.body.price; var category =req.body.category;
+  var createdBy=req.body.createdBy;
   
   var newad=new ads({title:title,discription:discription,category:category,price:price,pics:pictures,name:name,
-    phone:parseInt(phone)});
+    phone:parseInt(phone),createdBy:createdBy});
     
     newad.save(function(err){
         if(err) res.send("error there"+ err);
@@ -52,7 +53,7 @@ router.post('/posting.html',upload.array('pics'),function(req,res){
 
 router.get("/registration",function(req,res){
     var cat=req.query.verb;
-    res.render("registration",{status:cat,message:""});
+    res.render("registration",{status:cat,message:"",email:""});
 });
 
 router.post("/registration",function(req,res){
@@ -65,13 +66,13 @@ router.post("/registration",function(req,res){
             
                 var model = new users({email:email,Password:password});
                     model.save(function(err){
-                        if(!err){ console.log("Item added");
-                        res.render("registration",{status:"signup",message:"Sucessfully created"});
+                        if(!err){ console.log("Person  added");
+          res.render("registration",{status:"signup",message:"Sucessfully created",email:email});
                     }
                     });  
         
                 }else{
-                    res.render("registration",{status:"signup",message:"Email already exsist"});
+                    res.render("registration",{status:"signup",message:"Email already exsist",email:""});
         }
     })
    
@@ -82,13 +83,13 @@ router.post("/signin",function(req,res){
     users.findOne({email:email},function(err,result){
         if(result){
             if(Pass==result.Password){
-            res.render("registration",{status:"login",message:"Sucessfully Login"});
+            res.render("registration",{status:"login",message:"Sucessfully Login",success:true,email:email});
             }else{
-                res.render("registration",{status:"login",message:"Email and Password doesnot match"});
+                res.render("registration",{status:"login",message:"Email and Password doesnot match",email:""});
             }
         }
         else{
-            res.render("registration",{status:"login",message:"No such user exsist"});   
+            res.render("registration",{status:"login",message:"No such user exsist",email:""});   
         }
     });
 });
@@ -101,6 +102,32 @@ router.get("/ads",function(req,res){
         if(result){ res.render('ads',{objects:obj});}
     });
     //res.render("ads");
+});
+router.get('/discription',function(req,res){
+    console.log(req.query.id);
+    ads.findOne({_id:req.query.id},function(err,result){
+        if(err) res.send("error here"); 
+        if(result) res.render('discription',{object:result});
+
+    })
+    
+});
+router.get("/object",function(req,res){
+    
+  
+   ads.findOne({_id:req.query.id},function(err,result){
+    if(err) throw error; 
+
+    if(result) res.json(result);
+
+})
+});
+router.get('/mySearch',function(req,res){
+    console.log("executed");
+var text=req.query.search;
+ads.find({$or: [{title:text},{discription:text}] },function(err,result){
+     if(result) res.render('ads',{objects:result});
+});
 });
 
 module.exports=router;

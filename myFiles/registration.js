@@ -12,19 +12,19 @@
         }
 
         function dynamic(message, status){
-        
+         
         
             if(message!=""){
             alert(message);
                     }
                 if(status=="login"){
-                    document.querySelector(".loginContent").style.display="block";
+                    document.querySelector(".loginContent").style.display="display";
                     document.querySelector("#heading").textContent="login";
                     document.querySelector(".signupContent").style.display="none";
                 }
                 else if(status=="signup"){
-                    
+                    document.querySelector(".signupContent").style.display="display";
                     document.querySelector(".loginContent").style.display="none";
                     document.querySelector("#heading").textContent="signup";
-                    document.querySelector(".signupContent").style.display="block";
+                    
                 }}
