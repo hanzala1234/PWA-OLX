@@ -16,9 +16,7 @@ self.addEventListener("fetch",function(event){
 
     event.respondWith(
         caches.match(event.request).then(function(response){
-            return response||fetch(event.request).then(function(res){
-                return res;
-            }).catch(function(err){
+            return response||fetch(event.request).catch(function(err){
                 return caches.match("offline.html").then(function(res){
                     return res;
                 });
