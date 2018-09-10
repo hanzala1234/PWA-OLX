@@ -13,7 +13,7 @@ overflow:hidden;
 padding:4px;
 }
 .mo{display: inline;}
-.head a,button{
+.head a,button#addBtn{
     display:block;
     background-color:	#F67A06;
     text-decoration: none;

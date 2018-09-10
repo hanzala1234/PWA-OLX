@@ -76,3 +76,17 @@ tfoot input{
             width:280px;
         }
     }
+    @media only screen and (max-width:415px){
+        td{padding:7px;}
+        table{font-size:10px;}
+        input#title{
+            width:240px;
+        }
+        textarea{
+            width:220px;
+            height: 80px;
+        }
+        input[name=name],input[name=phone]{
+            width:200px;
+        }
+    }

@@ -52,7 +52,7 @@ ol{text-align: center;
     
     background-color: #F1F5FE;
 }
-button{
+button#send{
     background-color:	#F67A06;
     color:white;
     padding:8px;
@@ -214,4 +214,14 @@ margin-top:19px;
     ol{padding:5px;font-size:12px;}
     textarea{width:90px;}
 
+}
+@media only screen and (max-width:440px){
+    img#display{
+        height:170px;
+        width:190px;
+        margin:0px;
+        
+    }
+    ul{max-width:220px;}
+    .Info{max-width: 110px;}
 }
